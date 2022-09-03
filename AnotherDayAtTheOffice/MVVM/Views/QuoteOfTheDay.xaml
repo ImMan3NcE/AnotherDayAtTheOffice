@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnotherDayAtTheOffice.MVVM.Views.QuoteOfTheDay"
+             Title="QuoteOfTheDay">
+    <Grid RowDefinitions=".2*,.7*,.1*">
+        <Grid ColumnDefinitions=".3*,.4*,.3*">
+            <Button Style="{StaticResource ValueDay}" Grid.Column="0" Text="&lt;" Clicked="Button_Previous"/>
+            <DatePicker x:Name="datePickerNameDay"  Style="{StaticResource DatePicker}" DateSelected="datePickerNameDay_DateSelected" Grid.Column="1"/>
+            <Button Style="{StaticResource ValueDay}" Grid.Column="2" Text=">" Clicked="Button_Next"/>
+        </Grid>
+        <Grid Grid.Row="1" RowDefinitions=".2*,.1*,.7*" StyleClass="GridTxt">
+            <Image  Source="quote.png" />
+            <Label Grid.Row="1" StyleClass="NameDay" Text="Cytat Dnia:" />
+            <Grid Grid.Row="2" RowDefinitions=".7*,.2*,.1*" >
+                <ScrollView>
+                <Label Grid.Row="0"  x:Name="quotes" StyleClass="QuoteDay" Text="xxx" />
+                </ScrollView>
+                <Label Grid.Row="1" x:Name="quoteAuthor" StyleClass="QuoteDayAuthor" Text="xxx    "  />
+            </Grid>
+
+
+        </Grid>
+        <Button Grid.Row="2" Style="{StaticResource BackBtn}" Text="Powrót" Clicked="Button_Clicked" />
+    </Grid>
+</ContentPage>

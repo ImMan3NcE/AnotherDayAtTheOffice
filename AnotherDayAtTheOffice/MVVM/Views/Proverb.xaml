@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnotherDayAtTheOffice.MVVM.Views.Proverb"
+             Title="Proverb">
+    <Grid RowDefinitions=".2*,.7*,.1*">
+
+        <Grid ColumnDefinitions=".3*,.4*,.3*">
+            <Button Style="{StaticResource ValueDay}" Grid.Column="0" Text="&lt;" Clicked="Button_Previous"/>
+            <DatePicker x:Name="datePickerNameDay"  Style="{StaticResource DatePicker}" DateSelected="datePickerNameDay_DateSelected" Grid.Column="1"/>
+            <Button Style="{StaticResource ValueDay}" Grid.Column="2" Text=">" Clicked="Button_Next"/>
+        </Grid>
+        <Grid Grid.Row="1" RowDefinitions=".2*,.1*,.7*" StyleClass="GridTxt">
+            <Image  Source="talk.png" />
+            <Label Grid.Row="1" StyleClass="NameDay" Text="Przysłowia na dziś:" />
+            <Grid Grid.Row="2" RowDefinitions="*,*">
+                <Label Grid.Row="0" x:Name="proverbs" StyleClass="ProverbsDay" Text="xxx" />
+                <Label Grid.Row="1" x:Name="proverbs1" StyleClass="ProverbsDay" Text="xxx" />
+                
+            </Grid>
+        </Grid>
+        <Button Grid.Row="2" Style="{StaticResource BackBtn}" Text="Powrót" Clicked="Button_Clicked" />
+    </Grid>
+</ContentPage>
